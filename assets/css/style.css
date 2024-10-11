@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf") format("ttf"),
+         url("../fonts/Poppins-SemiBold.ttf") format("ttf"),
+         url("../fonts/Poppins-Medium.ttf") format("truetype"),
+         url("../fonts/Poppins-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Agrandir";
+    src: url("../fonts/Agrandir-TextBold.otf") format("otf"),
+}
+
+body {
+    background-color: #E0F7FA;
+    font-family: "Poppins", "Arial", sans-serif;
+    padding: 70px 20px 0; /* Add top padding to account for fixed navbar */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 900 !important;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-brand .upper-text {
+    font-family: "Agrandir", "Arial", sans-serif;
+    color: #ffc800;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    display: block;
+    line-height: 1.2;
+}
+
+.navbar-brand .tagline {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-brand .upper-text {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand .tagline {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-brand .upper-text {
+        font-size: 1.5rem;
+    }
+
+    .navbar-brand .tagline {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar-brand .upper-text {
+        font-size: 1.3rem;
+    }
+
+    .navbar-brand .tagline {
+        font-size: 0.7rem;
+    }
+}
+
+.food-item {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
+}
+
+.food-item img {
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.order-cart {
+    position: sticky;
+    top: 80px; /* Adjust this value to leave space below the fixed navbar */
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    max-height: calc(100vh - 100px); /* Limit height and enable scrolling */
+    overflow-y: auto;
+}
+
+.vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #dee2e6;
+}
+
+@media (max-width: 767.98px) {
+    .order-cart {
+        position: static;
+        margin-top: 2rem;
+        max-height: none; /* Remove max-height for mobile */
+        overflow-y: visible; /* Remove scroll for mobile */
+    }
+}
+
+.btn-primary {
+    background-color: #0c513f;
+    border-color: #0c513f;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background-color: #083d2f;
+    border-color: #083d2f;
+}
